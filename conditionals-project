@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Processing Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
+    <script>
+        var red, blue, green, diameter, circleX, circleY
+
+        function setup() {
+            createCanvas(600, 600)
+            red = 0
+            green = 0
+            blue = 0
+            diameter = 30
+            background(200)
+
+        }
+
+        function draw() {
+            circleX = mouseX
+            circleY = mouseY
+
+            //line + constrain variables
+            circleX = constrain(circleX, 0, width)
+            circleY = constrain(circleY, 75, height)
+            strokeWeight(2)
+            line(0, 75, width, 75)
+
+            //red
+            fill(255, 0, 0)
+            strokeWeight(3)
+            rect(25, 25, 30, 30, 7.5)
+
+            //green
+            fill(0, 255, 0)
+            strokeWeight(3)
+            rect(75, 25, 30, 30, 7.5)
+
+            //blue
+            fill(0, 0, 255)
+            strokeWeight(3)
+            rect(125, 25, 30, 30, 7.5)
+
+            //magenta
+            fill(255, 0, 255)
+            strokeWeight(3)
+            rect(175, 25, 30, 30, 7.5)
+
+            //orange
+            fill(255, 128, 0)
+            strokeWeight(3)
+            rect(225, 25, 30, 30, 7.5)
+
+            //light blue
+            fill(0, 255, 255)
+            strokeWeight(3)
+            rect(275, 25, 30, 30, 7.5)
+
+            //purple
+            fill(102, 0, 204)
+            strokeWeight(3)
+            rect(325, 25, 30, 30, 7.5)
+
+            //yellow
+            fill(255, 255, 0)
+            strokeWeight(3)
+            rect(375, 25, 30, 30, 7.5)
+
+            //black
+            fill(0)
+            strokeWeight(3)
+            rect(425, 25, 30, 30, 7.5)
+
+            //circle
+            noStroke()
+            fill(red, green, blue)
+            ellipse(circleX, circleY, diameter, diameter)
+        }
+
+        function mousePressed() {
+            //mouse clicked on red square, green square, or blue square respectively
+            if (mouseY <= 55 && mouseY >= 25 && mouseX >= 25 && mouseX <= 55) {
+                // background(255)
+                red = 255
+                green = 0
+                blue = 0
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 75 && mouseX <= 105) {
+                // background(255)
+                red = 0
+                green = 255
+                blue = 0
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 155) {
+                red = 0
+                green = 0
+                blue = 255
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 205) {
+                red = 255
+                green = 0
+                blue = 255
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 255) {
+                red = 255
+                green = 128
+                blue = 0
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 305) {
+                red = 0
+                green = 255
+                blue = 255
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 355) {
+                red = 102
+                green = 0
+                blue = 204
+            }
+            else if (mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 405) {
+                red = 255
+                green = 255
+                blue = 0
+            }
+            else if(mouseY <= 55 && mouseY >= 25 && mouseX >= 125 && mouseX <= 455){
+                red = 0
+                green = 0
+                blue = 0
+            }
+        }
+
+        function keyPressed() {
+            if (keyCode == UP_ARROW) {
+                diameter += 10
+            }
+            else if (keyCode == DOWN_ARROW) {
+                diameter -= 10
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/nicholasm0340/p5js/blob/master/conditionals-project.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
